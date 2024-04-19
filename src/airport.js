@@ -12,15 +12,20 @@ export class Airport{
                 this.landedAircraft.push(newplane);
                 return "plane added";            
             } else {
-                return "plane already landed"                
+                return "plane already landed";                
             }
             
-        } else{return "invalid plane"}
+        } else { return "invalid plane"; }
         
     }
 
     remPlane(planeToGo) {
-        return "plane took-off"
+        if (planeToGo instanceof Plane) {
+            let index = this.landedAircraft.indexOf(planeToGo);
+            this.landedAircraft.splice(index, 1);
+            return "plane took-off";
+        } else { return "invalid plane"; }
+        
     }
 
     getCount() {

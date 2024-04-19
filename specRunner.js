@@ -205,6 +205,172 @@ function test4_1() {
 
 }
 
+function test4_2() {
+    //Compare the length of the list of planes to see if it is one smaller
+    //Arrange
+    
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    let expected = theAirport.getCount()-1;
+    let testPlane = allPlanes.testPlane1;
+
+    //Act
+    let errorCode = theAirport.remPlane(testPlane)
+    let actual = theAirport.getCount();
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+
+    //manual check
+    //displayList(theAirport.listPlanes())
+
+    //automatic check
+    if (result) {
+        console.log(`Test 4.2 - remove Plane confirmation : Pass`);        
+    } else {
+        console.log(`Test 4.2 - remove Plane confirmation : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log("Planes in list:");
+        displayList(theAirport.listPlanes())
+        console.log(`==================`);        
+    } 
+}
+
+function test4_2b() {
+    //Compare the length of the list of planes to see if it is one smaller
+    //repeat of 4.2 but with a larger data set
+    //Arrange
+    
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.addPlane(allPlanes.testPlane4);
+    theAirport.addPlane(allPlanes.testPlane5);
+    
+    let expected = theAirport.getCount() - 1;
+    let testPlane = allPlanes.testPlane5;
+
+    //prelist for manual check - TIL JS uses pass by reference
+    //let prelist = theAirport.listPlanes(); 
+    
+
+    //Act
+    let errorCode = theAirport.remPlane(testPlane)
+    let actual = theAirport.getCount();
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+
+    //manual check
+    /*console.log("Pre-list:");
+    displayList(prelist);
+    console.log("post-list");
+    displayList(theAirport.listPlanes())*/
+
+    //automatic check
+    if (result) {
+        console.log(`Test 4.2b - remove Plane larger list confirmation : Pass`);        
+    } else {
+        console.log(`Test 4.2b - remove Plane larger list confirmation : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log("Planes in list:");
+        displayList(theAirport.listPlanes())
+        console.log(`==================`);        
+    } 
+}
+
+function test4_3() {
+    //Comfirm if passing a null is handled correctly 
+    //Arrange
+    
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.addPlane(allPlanes.testPlane4);
+    theAirport.addPlane(allPlanes.testPlane5);
+    
+    let expected = "invalid plane";
+    
+
+    //prelist for manual check - TIL JS uses pass by reference
+    //let prelist = theAirport.listPlanes(); 
+    
+
+    //Act
+    let actual = theAirport.remPlane()
+    
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+
+    
+
+    //automatic check
+    if (result) {
+        console.log(`Test 4.3 - remove plane null error handling check : Pass`);        
+    } else {
+        console.log(`Test 4.3 - remove plane null error handling check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
+        console.log("Planes in list:");
+        displayList(theAirport.listPlanes())
+        console.log(`==================`);        
+    } 
+}
+
+function test4_4() {
+    //Comfirm if passing a erroneous data is handled correctly 
+    //Arrange
+    
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.addPlane(allPlanes.testPlane4);
+    theAirport.addPlane(allPlanes.testPlane5);
+    
+    let expected = "invalid plane";
+    
+
+    //prelist for manual check - TIL JS uses pass by reference
+    //let prelist = theAirport.listPlanes(); 
+    
+
+    //Act
+    let actual = theAirport.remPlane("Cat")
+    
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+
+    
+
+    //automatic check
+    if (result) {
+        console.log(`Test 4.4 - remove plane invalid data handling check : Pass`);        
+    } else {
+        console.log(`Test 4.4 - remove plane invalid data handling check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
+        console.log("Planes in list:");
+        displayList(theAirport.listPlanes())
+        console.log(`==================`);        
+    } 
+}
+
 function template() {
     // Purpose of test
     //Arrange
@@ -241,3 +407,7 @@ test1_4();
 test2_1();
 test3_1();
 test4_1();
+test4_2();
+test4_2b();
+test4_3();
+test4_4();
