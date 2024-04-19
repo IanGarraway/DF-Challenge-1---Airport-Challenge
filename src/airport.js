@@ -40,8 +40,11 @@ export class Airport{
     getMaxCap() { return this.maxCap; }
 
     changeCap(newCap) {
-        this.maxCap = newCap;
-        return "cap changed";
+        if (Number.isInteger(newCap) && newCap>0) {
+            this.maxCap = newCap;
+            return "cap changed";            
+        } else { return "invalid number"; }
+        
     }
 
     

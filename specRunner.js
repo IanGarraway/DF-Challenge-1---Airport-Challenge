@@ -480,9 +480,9 @@ function test7_1() {
 
     //report
     if (result) {
-        console.log(`Test 7.1 - airport usage check : Pass`);
+        console.log(`Test 7.1 - airport Max Cap adjustment response check : Pass`);
     } else {
-        console.log(`Test 7.1 - airport usage check : Fail`);
+        console.log(`Test 7.1 - airport Max Cap adjustment response check : Fail`);
         console.log(`==================`);
         !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);
@@ -505,15 +505,88 @@ function test7_2() {
 
     //report
     if (result) {
-        console.log(`Test 7.2 - airport usage check : Pass`);
+        console.log(`Test 7.2 - airport Max Cap adjustment confirmation check : Pass`);
     } else {
-        console.log(`Test 7.2 - airport usage check : Fail`);
+        console.log(`Test 7.2 - airport Max Cap adjustment confirmation check : Fail`);
         console.log(`==================`);
         !result && console.log(`Function response: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
         console.log(`==================`);
     }
 }
 
+function test7_3() {
+    // Confirm maxCap adjustment handles invalid data
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "invalid number";
+
+    //Act
+
+    let actual = theAirport.changeCap("Cat");
+    
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 7.3 - airport Max Cap adjustment erroneous data check : Pass`);
+    } else {
+        console.log(`Test 7.3 - airport Max Cap adjustment erroneous data check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual};`);
+        console.log(`==================`);
+    }
+}
+function test7_4() {
+    // Confirm maxCap adjustment handles null data
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "invalid number";
+
+    //Act
+
+    let actual = theAirport.changeCap();
+    
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 7.4 - airport Max Cap adjustment null data check : Pass`);
+    } else {
+        console.log(`Test 7.4 - airport Max Cap adjustment null data check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual};`);
+        console.log(`==================`);
+    }
+}
+
+function test7_5() {
+    // Confirm maxCap adjustment handles negative numbers correctly
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "invalid number";
+
+    //Act
+
+    let actual = theAirport.changeCap(-1);
+    
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 7.5 - airport Max Cap adjustment negative data check : Pass`);
+    } else {
+        console.log(`Test 7.5 - airport Max Cap adjustment negative data check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual};`);
+        console.log(`==================`);
+    }
+}
 function template() {
     // Purpose of test
     //Arrange
@@ -525,9 +598,9 @@ function template() {
 
     //report
     if (result) {
-        console.log(`Test 1.4 - erroneous data - null check : Pass`);        
+        console.log(`Test 1.4 - erroneous data - negatives check : Pass`);        
     } else {
-        console.log(`Test 1.4 - erroneous data - null check : Fail`);
+        console.log(`Test 1.4 - erroneous data - negatives check : Fail`);
         console.log(`==================`);
         !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
@@ -559,3 +632,6 @@ test6_1();
 test6_2();
 test7_1();
 test7_2();
+test7_3();
+test7_4();
+test7_5();

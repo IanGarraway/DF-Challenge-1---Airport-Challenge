@@ -78,7 +78,7 @@ so that I know what planes are at the airport
 
 <br><b><i>Tests</i></b>
 - [x] returns correct amount of planes in list
-- [ ] able to return the maximum capacity of the airport 
+- [x] able to return the maximum capacity of the airport 
 
   ### <b><i>User Story 7</i></b>
 <br>As a representative of the airport I would like to be able to control the capacity of the airport so that we don't have more planes landed then we can manage
@@ -89,9 +89,10 @@ so that I know what planes are at the airport
 | airport     | - maxCap | - changeCap(@int) | @String |
 
 <br><b><i>Tests</i></b>
-- [ ] correctly changes the capacity of the airport
-- [ ] responds with the correct error code if abnormal data (letters) detected
+- [x] correctly changes the capacity of the airport
+- [x] responds with the correct error code if abnormal data (letters) detected
 - [ ] responds with the correct error code if abnormal data (0 or less) detected
+- [x] responds with the correct error code if null data detected
 
 ### <b><i>User Story 8</i></b>
 <br>As a air traffic controller I would like to ensure there is capacity to manage the plane before I allow it to land so that I don't land planes we can't manage.
