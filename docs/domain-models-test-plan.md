@@ -18,6 +18,7 @@ Miroboard view link: https://miro.com/app/board/uXjVKSeC0os=/?share_link_id=9234
 | airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
 <br><b><i>Tests</i></b>
 - [ ] A plane can be added to the list
+- [ ] something other than a plane returns an error message
 - [ ] null returns an error code
 
 ### <b><i>User Story 2</i></b>
