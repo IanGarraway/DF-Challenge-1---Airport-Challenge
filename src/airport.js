@@ -5,7 +5,12 @@ export class Airport{
     }
 
     addPlane(plane) {
+        this.landedAircraft.push(plane);
         return "plane added";
+    }
+
+    getCount() {
+        return this.landedAircraft.length;
     }
 
 

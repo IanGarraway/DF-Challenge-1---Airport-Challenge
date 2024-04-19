@@ -10,6 +10,7 @@ import allPlanes from "./spec/testPlanes.js"
 //test functions
 
 function test1_1() {
+    //Test's confirmation message of data successfully added
     //Arrange
     let expected = "plane added";
     let theAirport = new Airport();
@@ -29,15 +30,35 @@ function test1_1() {
         console.log(`Test 1.1 - Add Plane : Fail`);
         console.log(`==================`);
         !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
-        console.log(`==================`);
-        
-    }
-
-
-    
-
+        console.log(`==================`);        
+    } 
 }
 
+function test1_2() {
+    //Compare the length of the list of planes to see if it is one larger
+    //Arrange
+    
+    let theAirport = new Airport();
+    let expected = theAirport.getCount()+1;
+    let testPlane = allPlanes.testPlane1;
+
+    //Act
+    theAirport.addPlane(testPlane)
+    let actual = theAirport.getCount();
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 1.2 - Add Plane confirmation : Pass`);        
+    } else {
+        console.log(`Test 1.2 - Add Plane confirmation : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+}
 
 
 
@@ -62,3 +83,4 @@ function template() {
 
 //function calls
 test1_1();
+test1_2();
