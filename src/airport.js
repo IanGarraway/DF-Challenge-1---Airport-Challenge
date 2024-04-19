@@ -6,18 +6,16 @@ export class Airport{
         this.maxCap = 10;
             
     }
-
+    //is this too many nested if statments?
     addPlane(newplane) {
         if (newplane instanceof Plane) {
             if (this.landedAircraft.indexOf(newplane) === -1) {
-                this.landedAircraft.push(newplane);
-                return "plane added";            
-            } else {
-                return "plane already landed";                
-            }
-            
-        } else { return "invalid plane"; }
-        
+                if (this.getCount() < this.maxCap) {
+                    this.landedAircraft.push(newplane);
+                    return "plane added";                                
+                } else { return "max capacity reached"; }                
+            } else { return "plane already landed"; }            
+        } else { return "invalid plane"; }        
     }
 
     remPlane(planeToGo) {

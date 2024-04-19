@@ -91,7 +91,7 @@ so that I know what planes are at the airport
 <br><b><i>Tests</i></b>
 - [x] correctly changes the capacity of the airport
 - [x] responds with the correct error code if abnormal data (letters) detected
-- [ ] responds with the correct error code if abnormal data (0 or less) detected
+- [x] responds with the correct error code if abnormal data (0 or less) detected
 - [x] responds with the correct error code if null data detected
 
 ### <b><i>User Story 8</i></b>
@@ -103,6 +103,6 @@ so that I know what planes are at the airport
 | airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
 
 <br><b><i>Tests</i></b>
-- [ ] returns error message if attempting to land planes when capacity is full
-- [ ] allows planes to be landed at 1 less than capacity
-- [ ] won't allow the plane to land at full capacity, but then will allow plane to be landed if the capacity is increased 
+- [x] returns error message if attempting to land planes when capacity is full
+- [x] allows planes to be landed at 1 less than capacity
+- [x] won't allow the plane to land at full capacity, but then will allow plane to be landed if the capacity is increased 

@@ -587,6 +587,99 @@ function test7_5() {
         console.log(`==================`);
     }
 }
+
+function test8_1() {
+    // test to confirm you are unable to add planes once max capacity has been reached
+    //Arrange
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.changeCap(3);
+    let testPlane = allPlanes.testPlane4;
+    let expected = "max capacity reached";
+    
+    //Act
+    let actual = theAirport.addPlane(testPlane);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 8.1 - attempt to exceed max capacity check handling : Pass`);        
+    } else {
+        console.log(`Test 8.1 - attempt to exceed max capacity check handling : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
+function test8_2() {
+    // test to confirm you are able to add planes when one below max capacity (edge case)
+    //Arrange
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.changeCap(4);
+    let testPlane = allPlanes.testPlane4;
+    let expected = "plane added";
+    
+    //Act
+    let actual = theAirport.addPlane(testPlane);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 8.2 - attempt to land plane 1 below max capacity check handling : Pass`);        
+    } else {
+        console.log(`Test 8.2 - attempt to land plane 1 below max capacity check handling : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
+
+function test8_3() {
+    // test to confirm you are able to add planes when max capacity has been increased 
+    //Arrange
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.changeCap(3);
+    let testPlane = allPlanes.testPlane4;
+    let preAdjustmentExpected = "max capacity reached"
+    let expected = "plane added";
+    
+    //Act
+    let preAdjustmentActual = theAirport.addPlane(testPlane);
+    theAirport.changeCap(4);
+    let actual = theAirport.addPlane(testPlane);
+
+    // Assert
+    let preAdjustmentResult = assertEquals(preAdjustmentActual, preAdjustmentExpected);
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result&&preAdjustmentResult) {
+        console.log(`Test 8.3 - a plane unable to land will be able to if the cap is raised check : Pass`);        
+    } else {
+        console.log(`Test 8.3 - a plane unable to land will be able to if the cap is raised check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Preadjustment check failure: Function response: ${expected}; Actual: ${actual}`);
+        !result && console.log(`Postadjustment check failure: Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
+
+
 function template() {
     // Purpose of test
     //Arrange
@@ -635,3 +728,6 @@ test7_2();
 test7_3();
 test7_4();
 test7_5();
+test8_1();
+test8_2();
+test8_3();
