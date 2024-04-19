@@ -67,18 +67,18 @@ so that I know what planes are at the airport
 | airport     | - landedAircraft @Array[@plane] | - remPlane(@plane) | @String |
 
 <br><b><i>Tests</i></b>
-- [ ] returns correct error code if no plane exists in the list to take off
+- [x] returns correct error code if no plane exists in the list to take off
 
   ### <b><i>User Story 6</i></b>
 <br>As a representative of the airport I would like to know the capacity of the airport is so that I know how much space is available
 <br><b><i>Model</i></b>
 | Objects    | Properties     | Messages    | Output  |
 | ---------- | -------------- | ----------- | ------- |
-
-| airport     | - landedAircraft @Array[@plane] | - landedCount() | @int |
+| airport     | - landedAircraft @Array[@plane] <br> - maxCap @int | - landedCount() <br> - getMaxCap()  | @int |
 
 <br><b><i>Tests</i></b>
-- [ ] returns correct amount of planes in list 
+- [x] returns correct amount of planes in list
+- [ ] able to return the maximum capacity of the airport 
 
   ### <b><i>User Story 7</i></b>
 <br>As a representative of the airport I would like to be able to control the capacity of the airport so that we don't have more planes landed then we can manage

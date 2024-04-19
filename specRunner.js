@@ -419,6 +419,51 @@ function test5_1() {
     } 
 }
 
+function test6_1() {
+    // Check if the airport is able to return how many planes are presently landed
+    //Arrange
+    let theAirport = new Airport();
+    let expected = 0;
+
+    //Act
+    let actual = theAirport.getCount();
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 6.1 - airport usage check : Pass`);
+    } else {
+        console.log(`Test 6.1 - airport usage check : : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);
+    }
+}
+
+function test6_2() {
+    // Check if the airport is able to return the present set max capacity
+    //Arrange
+    let theAirport = new Airport();
+    let expected = 0;
+
+    //Act
+    let actual = theAirport.getMaxCap();
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 6.1 - airport usage check : Pass`);
+    } else {
+        console.log(`Test 6.1 - airport usage check : : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);
+    }
+}
 
 function template() {
     // Purpose of test
@@ -461,3 +506,5 @@ test4_2b();
 test4_3();
 test4_4();
 test5_1();
+test6_1();
+test6_2();
