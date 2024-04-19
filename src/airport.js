@@ -32,11 +32,20 @@ export class Airport{
         
     }
 
+    listPlanes() { return this.landedAircraft; }
+
     getCount() { return this.landedAircraft.length; }
 
     getMaxCap() { return 0; }
 
-    listPlanes() { return this.landedAircraft; }
+    changeCap(newCap) {
+        
+        return "cap changed";
+    }
+
+    
+
+
 
 
 }

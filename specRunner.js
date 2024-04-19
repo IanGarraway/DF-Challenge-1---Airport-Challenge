@@ -456,9 +456,33 @@ function test6_2() {
 
     //report
     if (result) {
-        console.log(`Test 6.1 - airport usage check : Pass`);
+        console.log(`Test 6.2 - airport max cap check : Pass`);
     } else {
-        console.log(`Test 6.1 - airport usage check : : Fail`);
+        console.log(`Test 6.2 - airport max cap check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);
+    }
+}
+
+function test7_1() {
+    // Check if the you are able to adjust maxCap
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "cap changed";
+
+    //Act
+
+    let actual = theAirport.changeCap(5);
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 7.1 - airport usage check : Pass`);
+    } else {
+        console.log(`Test 7.1 - airport usage check : Fail`);
         console.log(`==================`);
         !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);
@@ -508,3 +532,4 @@ test4_4();
 test5_1();
 test6_1();
 test6_2();
+test7_1();
