@@ -79,7 +79,33 @@ function test1_3() {
     if (result) {
         console.log(`Test 1.3 - erroneous data check : Pass`);        
     } else {
-        console.log(`Test 1.2 - erroneous data check : Fail`);
+        console.log(`Test 1.3 - erroneous data check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+}
+
+function test1_4() {
+    //returns and error if a null is added
+    //Arrange
+    
+    let theAirport = new Airport();
+    let expected = "invalid plane";
+    
+
+    //Act
+    let actual = theAirport.addPlane();
+     
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 1.4 - erroneous data - null check : Pass`);        
+    } else {
+        console.log(`Test 1.4 - erroneous data - null check : Fail`);
         console.log(`==================`);
         !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
@@ -109,3 +135,4 @@ function template() {
 test1_1();
 test1_2();
 test1_3();
+test1_4();
