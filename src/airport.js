@@ -21,9 +21,13 @@ export class Airport{
 
     remPlane(planeToGo) {
         if (planeToGo instanceof Plane) {
-            let index = this.landedAircraft.indexOf(planeToGo);
-            this.landedAircraft.splice(index, 1);
-            return "plane took-off";
+            let i = this.landedAircraft.indexOf(planeToGo);
+            if (i != -1) {
+                let index = this.landedAircraft.indexOf(planeToGo);
+                this.landedAircraft.splice(index, 1);
+                return "plane took-off";                
+            } else{return "plane not landed"}
+            
         } else { return "invalid plane"; }
         
     }

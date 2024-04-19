@@ -372,6 +372,54 @@ function test4_4() {
     } 
 }
 
+function test5_1() {
+    //Comfirm if passing a erroneous data is handled correctly 
+    //Arrange
+    
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.addPlane(allPlanes.testPlane4);
+    
+    let testPlane = allPlanes.testPlane5;
+    
+    let expected = "plane not landed";
+    
+    //manual check
+    //displayList(theAirport.listPlanes())
+
+
+    //prelist for manual check - TIL JS uses pass by reference
+    //let prelist = theAirport.listPlanes(); 
+    
+
+    //Act
+    let actual = theAirport.remPlane(testPlane)
+    
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    //manual check
+    //displayList(theAirport.listPlanes())
+
+    
+    //automatic check
+    if (result) {
+        console.log(`Test 5.1 - remove non landed plane handling check : Pass`);        
+    } else {
+        console.log(`Test 5.1 - remove non landed plane handling check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
+        console.log("Planes in list:");
+        displayList(theAirport.listPlanes())
+        console.log(`==================`);        
+    } 
+}
+
+
 function template() {
     // Purpose of test
     //Arrange
@@ -412,3 +460,4 @@ test4_2();
 test4_2b();
 test4_3();
 test4_4();
+test5_1();

@@ -55,7 +55,8 @@ so that I know what planes are at the airport
 <br><b><i>Tests</i></b>
 - [x] plane is removed from list
 - [x] ~~if the plane isn't on the list, no plane is removed~~ related to User story 5.
-- [ ] able to handle a null plane appropriately
+- [x] able to handle a null plane appropriately
+- [x] able to handle a erroneous data appropriately
   
   ### <b><i>User Story 5</i></b>
 <br>As a Air Traffic Controller I would like to ensure a plane is at the airport before I instruct it to take-off so that I don't accidentally instruct a plane not at the airport to leave it.
