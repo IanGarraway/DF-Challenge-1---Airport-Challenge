@@ -11,6 +11,18 @@
     "start": "node src/index.js",
     "test": "node specRunner.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Ian Garraway",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digital-futures-academy-se-2404-a/challenge-1-airport-IanGarraway.git"
+  },
+  "keywords": [
+    "challenge",
+    "1"
+  ],
+  "bugs": {
+    "url": "https://github.com/digital-futures-academy-se-2404-a/challenge-1-airport-IanGarraway/issues"
+  },
+  "homepage": "https://github.com/digital-futures-academy-se-2404-a/challenge-1-airport-IanGarraway#readme"
 }
