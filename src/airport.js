@@ -18,5 +18,7 @@ export class Airport{
         return this.landedAircraft.length;
     }
 
+    listPlanes() { return this.landedAircraft; }
+
 
 }

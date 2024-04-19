@@ -17,9 +17,9 @@ Miroboard view link: https://miro.com/app/board/uXjVKSeC0os=/?share_link_id=9234
 | plane      | - acReg @String | - getReg() | @String | 
 | airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
 <br><b><i>Tests</i></b>
-- [ ] A plane can be added to the list
-- [ ] something other than a plane returns an error message
-- [ ] null returns an error code
+- [x] A plane can be added to the list
+- [x] something other than a plane returns an error message
+- [x] null returns an error code
 
 ### <b><i>User Story 2</i></b>
 <br>As a representative of the airport I would like to know what planes are landed
@@ -31,7 +31,7 @@ so that I know what planes are at the airport
 | airport     | - landedAircraft @Array[@plane] | - listPlanes() | @Array[@plane] |
 
 <br><b><i>Tests</i></b>
-- [ ] lists the planes in the landed list
+- [x] lists the planes in the landed list
 
 ### <b><i>User Story 3</i></b>
 <br>As a Air Traffic Controller I would like to ensure a plane isn't already in the airport before I instruct it to land so that I don't accidentally instruct an already landed plane to land again.

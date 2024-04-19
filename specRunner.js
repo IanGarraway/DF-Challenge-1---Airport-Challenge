@@ -4,7 +4,14 @@ import { Airport } from "./src/airport.js";
 import { assertEquals } from "./spec/asserts.js";
 import allPlanes from "./spec/testPlanes.js"
 
+//Repeated Functions
 
+function displayList(listToShow) {
+    listToShow.forEach((item) => {
+        console.log(item);
+        return item;
+    });
+}
 
 
 //test functions
@@ -112,15 +119,57 @@ function test1_4() {
     } 
 }
 
+function test2_1() {
+    //passes out a list of the planes which are presently landed
+    //Arrange
+
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    let expected = 2;
+
+    //Act
+    let planeList = theAirport.listPlanes();
+    let actual = planeList.length;
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //manual check to visually confirm the automatic one
+    displayList(planeList);
+
+    //report
+    if (result) {
+        console.log(`Test 2.1 - List Export : Pass`);        
+    } else {
+        console.log(`Test 2.1 - List Export : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        displayList(planeList);
+        console.log(`==================`);        
+    } 
+
+}
+
+
 function template() {
-    //## <test number> Purpose of test
+    // Purpose of test
     //Arrange
 
     //Act
 
-    //Assert
+   // Assert
+    let result = assertEquals(actual, expected);
 
-    //Report
+    //report
+    if (result) {
+        console.log(`Test 1.4 - erroneous data - null check : Pass`);        
+    } else {
+        console.log(`Test 1.4 - erroneous data - null check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
 
 }
 
@@ -136,3 +185,4 @@ test1_1();
 test1_2();
 test1_3();
 test1_4();
+test2_1();
