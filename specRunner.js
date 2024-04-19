@@ -43,7 +43,7 @@ function test1_2() {
     let testPlane = allPlanes.testPlane1;
 
     //Act
-    theAirport.addPlane(testPlane)
+    let errorCode = theAirport.addPlane(testPlane)
     let actual = theAirport.getCount();
 
     // Assert
@@ -55,12 +55,36 @@ function test1_2() {
     } else {
         console.log(`Test 1.2 - Add Plane confirmation : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}`);
+        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
         console.log(`==================`);        
     } 
 }
 
+function test1_3() {
+    //returns and error if a non plane is added
+    //Arrange
+    
+    let theAirport = new Airport();
+    let expected = "invalid plane";
+    
 
+    //Act
+    let actual = theAirport.addPlane("Cat")
+     
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 1.3 - erroneous data check : Pass`);        
+    } else {
+        console.log(`Test 1.2 - erroneous data check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+}
 
 function template() {
     //## <test number> Purpose of test
@@ -84,3 +108,4 @@ function template() {
 //function calls
 test1_1();
 test1_2();
+test1_3();

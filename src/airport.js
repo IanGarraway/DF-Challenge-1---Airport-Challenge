@@ -1,12 +1,17 @@
+import { Plane } from "./plane.js";
+
 export class Airport{
     constructor() {
         this.landedAircraft = [];
             
     }
 
-    addPlane(plane) {
-        this.landedAircraft.push(plane);
-        return "plane added";
+    addPlane(newplane) {
+        if (newplane instanceof Plane) {
+            this.landedAircraft.push(newplane);
+            return "plane added";            
+        } else{return "invalid plane"}
+        
     }
 
     getCount() {
