@@ -133,10 +133,10 @@ function test2_1() {
     let actual = planeList.length;
 
     // Assert
-    let result = assertEquals(actual, expected);
+    let result = assertEquals(actual, expected); //checks to see if the length of the list matches the expected 
 
     //manual check to visually confirm the automatic one
-    displayList(planeList);
+    //displayList(planeList);
 
     //report
     if (result) {
@@ -146,6 +146,33 @@ function test2_1() {
         console.log(`==================`);
         !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
         displayList(planeList);
+        console.log(`==================`);        
+    } 
+
+}
+
+function test3_1() {
+    // Ensure a plane already in the landed list, cannot be landed.
+    //Arrange
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    let expected = "plane already landed";
+
+    //Act
+
+    let actual = theAirport.addPlane(allPlanes.testPlane1);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 3.1 - plane already landed check : Pass`);        
+    } else {
+        console.log(`Test 3.1 - plane already landed check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
@@ -186,3 +213,4 @@ test1_2();
 test1_3();
 test1_4();
 test2_1();
+test3_1();

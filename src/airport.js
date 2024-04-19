@@ -8,8 +8,13 @@ export class Airport{
 
     addPlane(newplane) {
         if (newplane instanceof Plane) {
-            this.landedAircraft.push(newplane);
-            return "plane added";            
+            if (this.landedAircraft.indexOf(newplane) === -1) {
+                this.landedAircraft.push(newplane);
+                return "plane added";            
+            } else {
+                return "plane already landed"                
+            }
+            
         } else{return "invalid plane"}
         
     }

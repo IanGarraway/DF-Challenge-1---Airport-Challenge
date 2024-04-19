@@ -42,7 +42,7 @@ so that I know what planes are at the airport
 | airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
 
 <br><b><i>Tests</i></b>
-- [ ] Unable to add a plane which is already landed, with appropriate error message
+- [x] Unable to add a plane which is already landed, with appropriate error message
 
 ### <b><i>User Story 4</i></b>
 <br>As a Air Traffic Controller I would like to be able to instruct a plane to take-off so that it can be removed from the list of planes at the airport
