@@ -356,7 +356,8 @@ function test4_4() {
 
     //report
 
-    
+    //manual check
+    //displayList(theAirport.listPlanes())
 
     //automatic check
     if (result) {
