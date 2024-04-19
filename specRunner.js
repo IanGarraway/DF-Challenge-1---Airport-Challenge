@@ -178,6 +178,32 @@ function test3_1() {
 
 }
 
+function test4_1() {
+    // test confirmation that a plane has been removed from the list.
+    //Arrange
+    let theAirport = new Airport();
+    theAirport.addPlane(allPlanes.testPlane1);
+    theAirport.addPlane(allPlanes.testPlane2);
+    let expected = "plane took-off";
+
+    //Act
+
+    let actual = theAirport.remPlane(allPlanes.testPlane1);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 4.1 - plane took off check : Pass`);        
+    } else {
+        console.log(`Test 4.1 - plane took off check : : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
 
 function template() {
     // Purpose of test
@@ -207,10 +233,11 @@ function template() {
 
 
 
-//function calls
+//Test function calls
 test1_1();
 test1_2();
 test1_3();
 test1_4();
 test2_1();
 test3_1();
+test4_1();

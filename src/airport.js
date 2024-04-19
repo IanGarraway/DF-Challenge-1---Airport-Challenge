@@ -19,6 +19,10 @@ export class Airport{
         
     }
 
+    remPlane(planeToGo) {
+        return "plane took-off"
+    }
+
     getCount() {
         return this.landedAircraft.length;
     }
