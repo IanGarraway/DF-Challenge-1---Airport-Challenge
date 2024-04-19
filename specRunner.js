@@ -446,7 +446,7 @@ function test6_2() {
     // Check if the airport is able to return the present set max capacity
     //Arrange
     let theAirport = new Airport();
-    let expected = 0;
+    let expected = 10;
 
     //Act
     let actual = theAirport.getMaxCap();

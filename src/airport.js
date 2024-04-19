@@ -3,6 +3,7 @@ import { Plane } from "./plane.js";
 export class Airport{
     constructor() {
         this.landedAircraft = [];
+        this.maxCap = 10;
             
     }
 
