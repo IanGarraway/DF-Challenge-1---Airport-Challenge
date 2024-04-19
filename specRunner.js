@@ -489,6 +489,31 @@ function test7_1() {
     }
 }
 
+function test7_2() {
+    // Confirm maxCap adjustment has been made
+    //Arrange
+    let theAirport = new Airport();
+    let expected = 5;
+
+    //Act
+
+    let errorCode = theAirport.changeCap(5);
+    let actual = theAirport.getMaxCap();
+
+    // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 7.2 - airport usage check : Pass`);
+    } else {
+        console.log(`Test 7.2 - airport usage check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`Function response: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log(`==================`);
+    }
+}
+
 function template() {
     // Purpose of test
     //Arrange
@@ -533,3 +558,4 @@ test5_1();
 test6_1();
 test6_2();
 test7_1();
+test7_2();

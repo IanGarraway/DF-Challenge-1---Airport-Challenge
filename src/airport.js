@@ -36,10 +36,10 @@ export class Airport{
 
     getCount() { return this.landedAircraft.length; }
 
-    getMaxCap() { return 0; }
+    getMaxCap() { return this.maxCap; }
 
     changeCap(newCap) {
-        
+        this.maxCap = newCap;
         return "cap changed";
     }
 
