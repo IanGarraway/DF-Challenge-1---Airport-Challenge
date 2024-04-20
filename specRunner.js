@@ -50,3 +50,4 @@ test.test10_1();
 test.test10_2();
 //Tests of User Story 11
 test.test11_1();
+test.test11_2();

@@ -842,7 +842,7 @@ export function test10_1() {
 }
 
 export function test10_2() {
-    // Able to land planes if the weather is has been changed from stormy
+    // Able to land planes if the weather has been changed from stormy
     //Arrange
     let theAirport = new Airport();
     let expected = "plane added";
@@ -902,6 +902,42 @@ export function test11_1() {
         console.log(`==================`);
         console.log(`export function response: ${expected}; Actual: ${actual}; `);
         console.log(`Weather: ${theAirport.getWeather()}; Stormy: ${theAirport.getStormy()}`);
+
+        console.log(`==================`);        
+    } 
+
+}
+
+export function test11_2() {
+    // Able for planes to take off if the weather has been changed from stormy
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "plane added";
+    let testPlane = allPlanes.testPlane1;
+    theAirport.setWeather("Stormy");
+
+    let stormyTakeOff = theAirport.takeOff(testPlane);
+
+    theAirport.setWeather("Sunny");
+
+
+    //Act
+
+    
+    let actual = theAirport.land(testPlane);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 11.2 - changing back from stormy allows a plane to take-off : Pass`);        
+    } else {
+        console.log(`Test 11.2 - changing back from stormy allows a plane to take-off : Fail`);
+        console.log(`==================`);
+        console.log(`export function response: ${expected}; Actual: ${actual}; `);
+        console.log(`Weather: ${theAirport.getWeather()}; Stormy: ${theAirport.getStormy()}`);
+        console.log(`stormy takeoff attempt: ${stormyTakeOff}`);
 
         console.log(`==================`);        
     } 
