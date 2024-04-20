@@ -810,6 +810,37 @@ export function test9_5() {
 }
 
 
+export function test10_1() {
+    // Unable to land planes if the weather is stormy
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "stormy weather warning";
+    let testPlane = allPlanes.testPlane1;
+    theAirport.setWeather("Stormy");
+
+
+    //Act
+
+    
+    let actual = theAirport.land(testPlane);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 10.1 - stormy weather stops a plane from landing : Pass`);        
+    } else {
+        console.log(`Test 10.1 - stormy weather stops a plane from landing : Fail`);
+        console.log(`==================`);
+        console.log(`export function response: ${expected}; Actual: ${actual}; `);
+        console.log(`Weather: ${theAirport.getWeather()}; Stormy: ${theAirport.getStormy()}`);
+
+        console.log(`==================`);        
+    } 
+
+}
+
 export function template() {
     // Purpose of test
     //Arrange

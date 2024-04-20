@@ -45,3 +45,5 @@ test.test9_2();
 test.test9_3();
 test.test9_4();
 test.test9_5();
+//Tests of User Story 10
+test.test10_1();

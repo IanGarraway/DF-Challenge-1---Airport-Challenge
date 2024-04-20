@@ -5,12 +5,14 @@ export class Airport{
         this.landedAircraft = [];
         this.maxCap = 10;
         this.weather = "Sunny";
+        this.stormy = false;
             
     }
     
     land(newplane) {
 
         if (!(newplane instanceof Plane)) { return "invalid plane"; }
+        if (this.stormy == true) { return "stormy weather warning"; }
         if (this.landedAircraft.indexOf(newplane) !== -1) { return "plane already landed"; }
         if (this.getCount() >= this.maxCap) { return "max capacity reached"; } 
 
@@ -32,7 +34,7 @@ export class Airport{
     }
 
     takeOff(planeToGo) {
-        if (!(planeToGo instanceof Plane)) { return "invalid plane"; }
+        if (!(planeToGo instanceof Plane)) { return "invalid plane"; }        
         let index = this.landedAircraft.indexOf(planeToGo);
         if (index === -1) { return "plane not landed"; }
 
@@ -72,8 +74,11 @@ export class Airport{
     setWeather(weather) {
         if (weather == null || weather == "") { return "invalid weather"; }
         this.weather = weather;
+        this.stormy = (weather === "Stormy");
         return "weather set";
     }
+
+    getStormy() { return this.stormy; }
 
     
 
