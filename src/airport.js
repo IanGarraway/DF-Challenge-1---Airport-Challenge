@@ -64,6 +64,10 @@ export class Airport{
         
     }
 
+    getWeather() {
+        return "Sunny";
+    }
+
     
 
 

@@ -680,9 +680,36 @@ export function test8_3() {
 }
 
 
+export function test9_1() {
+    // Check if the airport is able to return the weather
+
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "Sunny";
+
+    //Act
+    let actual = theAirport.getWeather();
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 9.1 - can the airport report the weather? : Pass`);        
+    } else {
+        console.log(`Test 9.1 - can the airport report the weather? : Fail`);
+        console.log(`==================`);
+        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
+
+
 export function template() {
     // Purpose of test
     //Arrange
+    let theAirport = new Airport();
 
     //Act
 
