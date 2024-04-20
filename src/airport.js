@@ -30,7 +30,7 @@ export class Airport{
         */
     }
 
-    remPlane(planeToGo) {
+    takeOff(planeToGo) {
         if (planeToGo instanceof Plane) {
             let i = this.landedAircraft.indexOf(planeToGo);
             if (i != -1) {

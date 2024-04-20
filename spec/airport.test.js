@@ -188,7 +188,7 @@ export function test4_1() {
 
     //Act
 
-    let actual = theAirport.remPlane(allPlanes.testPlane1);
+    let actual = theAirport.takeOff(allPlanes.testPlane1);
 
    // Assert
     let result = assertEquals(actual, expected);
@@ -216,7 +216,7 @@ export function test4_2() {
     let testPlane = allPlanes.testPlane1;
 
     //Act
-    let errorCode = theAirport.remPlane(testPlane)
+    let errorCode = theAirport.takeOff(testPlane)
     let actual = theAirport.getCount();
 
     // Assert
@@ -260,7 +260,7 @@ export function test4_2b() {
     
 
     //Act
-    let errorCode = theAirport.remPlane(testPlane)
+    let errorCode = theAirport.takeOff(testPlane)
     let actual = theAirport.getCount();
 
     // Assert
@@ -306,7 +306,7 @@ export function test4_3() {
     
 
     //Act
-    let actual = theAirport.remPlane()
+    let actual = theAirport.takeOff()
     
 
     // Assert
@@ -348,7 +348,7 @@ export function test4_4() {
     
 
     //Act
-    let actual = theAirport.remPlane("Cat")
+    let actual = theAirport.takeOff("Cat")
     
 
     // Assert
@@ -395,7 +395,7 @@ export function test5_1() {
     
 
     //Act
-    let actual = theAirport.remPlane(testPlane)
+    let actual = theAirport.takeOff(testPlane)
     
 
     // Assert

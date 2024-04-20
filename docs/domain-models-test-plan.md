@@ -50,7 +50,7 @@ so that I know what planes are at the airport
 | Objects    | Properties     | Messages    | Output  |
 | ---------- | -------------- | ----------- | ------- |
 | plane      | - acReg @String | - getReg() | @String | 
-| airport     | - landedAircraft @Array[@plane] | - remPlane(@plane) | @String |
+| airport     | - landedAircraft @Array[@plane] | - ~~remPlane(@plane)~~<br> - takeOff(@plane) | @String |
 
 <br><b><i>Tests</i></b>
 - [x] plane is removed from list
@@ -64,7 +64,7 @@ so that I know what planes are at the airport
 | Objects    | Properties     | Messages    | Output  |
 | ---------- | -------------- | ----------- | ------- |
 | plane      | - acReg @String | - getReg() | @String | 
-| airport     | - landedAircraft @Array[@plane] | - remPlane(@plane) | @String |
+| airport     | - landedAircraft @Array[@plane] | - ~~remPlane(@plane)~~<br> - takeOff(@plane) | @String |
 
 <br><b><i>Tests</i></b>
 - [x] returns correct error code if no plane exists in the list to take off
