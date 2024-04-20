@@ -166,3 +166,6 @@ so that I know what planes are at the airport
 
 - [x] if the weather is stormy the takeOff function returns appropriate error message
 - [x] if the weather is not stormy and no other exception is met, the plane can take-off.
+
+## Final Kanban Board
+![final user stories](KanbanBoard-Extensionfeaturecomplete.png)
