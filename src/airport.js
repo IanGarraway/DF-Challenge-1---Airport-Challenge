@@ -31,7 +31,14 @@ export class Airport{
     }
 
     takeOff(planeToGo) {
-        if (planeToGo instanceof Plane) {
+        if (!(planeToGo instanceof Plane)) { return "invalid plane"; }
+        let index = this.landedAircraft.indexOf(planeToGo);
+        if (index === -1) { return "plane not landed"; }
+
+        this.landedAircraft.splice(index, 1);
+        return "plane took-off";  
+
+        /*if (planeToGo instanceof Plane) {
             let i = this.landedAircraft.indexOf(planeToGo);
             if (i != -1) {
                 let index = this.landedAircraft.indexOf(planeToGo);
@@ -39,7 +46,7 @@ export class Airport{
                 return "plane took-off";                
             } else{return "plane not landed"}
             
-        } else { return "invalid plane"; }
+        } else { return "invalid plane"; } */
         
     }
 
