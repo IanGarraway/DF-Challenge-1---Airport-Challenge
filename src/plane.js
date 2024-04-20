@@ -1,9 +1,9 @@
 export class Plane {
     
     constructor(acReg) {
-        this.acReg = acReg;
+        this.aircraftReg = acReg;
     }
 
-    getReg() { return this.acReg; }
+    getReg() { return this.aircraftReg; }
 
 }
