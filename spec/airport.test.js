@@ -25,7 +25,7 @@ export function test1_1() {
 
     //Act
 
-    let actual = theAirport.addPlane(testPlane)
+    let actual = theAirport.land(testPlane)
 
     // Assert
     let result = assertEquals(actual, expected);
@@ -50,7 +50,7 @@ export function test1_2() {
     let testPlane = allPlanes.testPlane1;
 
     //Act
-    let errorCode = theAirport.addPlane(testPlane)
+    let errorCode = theAirport.land(testPlane)
     let actual = theAirport.getCount();
 
     // Assert
@@ -76,7 +76,7 @@ export function test1_3() {
     
 
     //Act
-    let actual = theAirport.addPlane("Cat")
+    let actual = theAirport.land("Cat")
      
 
     // Assert
@@ -102,7 +102,7 @@ export function test1_4() {
     
 
     //Act
-    let actual = theAirport.addPlane();
+    let actual = theAirport.land();
      
 
     // Assert
@@ -124,8 +124,8 @@ export function test2_1() {
     //Arrange
 
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
     let expected = 2;
 
     //Act
@@ -155,13 +155,13 @@ export function test3_1() {
     // Ensure a plane already in the landed list, cannot be landed.
     //Arrange
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
     let expected = "plane already landed";
 
     //Act
 
-    let actual = theAirport.addPlane(allPlanes.testPlane1);
+    let actual = theAirport.land(allPlanes.testPlane1);
 
    // Assert
     let result = assertEquals(actual, expected);
@@ -182,8 +182,8 @@ export function test4_1() {
     // test confirmation that a plane has been removed from the list.
     //Arrange
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
     let expected = "plane took-off";
 
     //Act
@@ -210,8 +210,8 @@ export function test4_2() {
     //Arrange
     
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
     let expected = theAirport.getCount()-1;
     let testPlane = allPlanes.testPlane1;
 
@@ -246,11 +246,11 @@ export function test4_2b() {
     //Arrange
     
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
-    theAirport.addPlane(allPlanes.testPlane4);
-    theAirport.addPlane(allPlanes.testPlane5);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane4);
+    theAirport.land(allPlanes.testPlane5);
     
     let expected = theAirport.getCount() - 1;
     let testPlane = allPlanes.testPlane5;
@@ -292,11 +292,11 @@ export function test4_3() {
     //Arrange
     
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
-    theAirport.addPlane(allPlanes.testPlane4);
-    theAirport.addPlane(allPlanes.testPlane5);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane4);
+    theAirport.land(allPlanes.testPlane5);
     
     let expected = "invalid plane";
     
@@ -334,11 +334,11 @@ export function test4_4() {
     //Arrange
     
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
-    theAirport.addPlane(allPlanes.testPlane4);
-    theAirport.addPlane(allPlanes.testPlane5);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane4);
+    theAirport.land(allPlanes.testPlane5);
     
     let expected = "invalid plane";
     
@@ -377,10 +377,10 @@ export function test5_1() {
     //Arrange
     
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
-    theAirport.addPlane(allPlanes.testPlane4);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane4);
     
     let testPlane = allPlanes.testPlane5;
     
@@ -592,15 +592,15 @@ export function test8_1() {
     // test to confirm you are unable to add planes once max capacity has been reached
     //Arrange
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
     theAirport.changeCap(3);
     let testPlane = allPlanes.testPlane4;
     let expected = "max capacity reached";
     
     //Act
-    let actual = theAirport.addPlane(testPlane);
+    let actual = theAirport.land(testPlane);
 
    // Assert
     let result = assertEquals(actual, expected);
@@ -620,15 +620,15 @@ export function test8_2() {
     // test to confirm you are able to add planes when one below max capacity (edge case)
     //Arrange
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
     theAirport.changeCap(4);
     let testPlane = allPlanes.testPlane4;
     let expected = "plane added";
     
     //Act
-    let actual = theAirport.addPlane(testPlane);
+    let actual = theAirport.land(testPlane);
 
    // Assert
     let result = assertEquals(actual, expected);
@@ -649,18 +649,18 @@ export function test8_3() {
     // test to confirm you are able to add planes when max capacity has been increased 
     //Arrange
     let theAirport = new Airport();
-    theAirport.addPlane(allPlanes.testPlane1);
-    theAirport.addPlane(allPlanes.testPlane2);
-    theAirport.addPlane(allPlanes.testPlane3);
+    theAirport.land(allPlanes.testPlane1);
+    theAirport.land(allPlanes.testPlane2);
+    theAirport.land(allPlanes.testPlane3);
     theAirport.changeCap(3);
     let testPlane = allPlanes.testPlane4;
     let preAdjustmentExpected = "max capacity reached"
     let expected = "plane added";
     
     //Act
-    let preAdjustmentActual = theAirport.addPlane(testPlane);
+    let preAdjustmentActual = theAirport.land(testPlane);
     theAirport.changeCap(4);
-    let actual = theAirport.addPlane(testPlane);
+    let actual = theAirport.land(testPlane);
 
     // Assert
     let preAdjustmentResult = assertEquals(preAdjustmentActual, preAdjustmentExpected);

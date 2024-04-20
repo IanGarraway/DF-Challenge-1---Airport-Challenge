@@ -15,7 +15,7 @@ Miroboard view link: https://miro.com/app/board/uXjVKSeC0os=/?share_link_id=9234
 | Objects    | Properties     | Messages    | Output  |
 | ---------- | -------------- | ----------- | ------- |
 | plane      | - acReg @String | - getReg() | @String | 
-| airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
+| airport     | - landedAircraft @Array[@plane] | - ~~addPlane(@plane)~~ <br> - land(@plane) | @String |
 <br><b><i>Tests</i></b>
 - [x] A plane can be added to the list
 - [x] something other than a plane returns an error message
@@ -39,7 +39,7 @@ so that I know what planes are at the airport
 | Objects    | Properties     | Messages    | Output  |
 | ---------- | -------------- | ----------- | ------- |
 | plane      | - acReg @String | - getReg() | @String | 
-| airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
+| airport     | - landedAircraft @Array[@plane] | -  ~~addPlane(@plane)~~ <br> - land(@plane | @String |
 
 <br><b><i>Tests</i></b>
 - [x] Unable to add a plane which is already landed, with appropriate error message
@@ -100,7 +100,7 @@ so that I know what planes are at the airport
 | Objects    | Properties     | Messages    | Output  |
 | ---------- | -------------- | ----------- | ------- |
 | plane      | - acReg @String | - getReg() | @String | 
-| airport     | - landedAircraft @Array[@plane] | - addPlane(@plane) | @String |
+| airport     | - landedAircraft @Array[@plane] | -  ~~addPlane(@plane)~~ <br> - land(@plane | @String |
 
 <br><b><i>Tests</i></b>
 - [x] returns error message if attempting to land planes when capacity is full

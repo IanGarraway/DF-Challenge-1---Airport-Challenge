@@ -7,7 +7,7 @@ export class Airport{
             
     }
     //is this too many nested if statments?
-    addPlane(newplane) {
+    land(newplane) {
         if (newplane instanceof Plane) {
             if (this.landedAircraft.indexOf(newplane) === -1) {
                 if (this.getCount() < this.maxCap) {
