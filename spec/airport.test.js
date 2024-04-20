@@ -4,7 +4,7 @@ import { Airport } from "../src/airport.js";
 import { assertEquals } from "./asserts.js";
 import allPlanes from "./testPlanes.js"
 
-//Repeated export functions
+//Repeated functions
 
 export function displayList(listToShow) {
     listToShow.forEach((item) => {
@@ -17,7 +17,7 @@ export function displayList(listToShow) {
 //test export functions
 
 export function test1_1() {
-    //Test's confirmation message of data successfully added
+    //Test confirmation message from the land function reports correctly
     //Arrange
     let expected = "plane added";
     let theAirport = new Airport();
@@ -32,17 +32,18 @@ export function test1_1() {
 
     //report
     if (result) {
-        console.log(`Test 1.1 - Add Plane : Pass`);        
+        console.log(`Test 1.1 - check of Land Plane confirmation message : Pass`);        
     } else {
-        console.log(`Test 1.1 - Add Plane : Fail`);
+        console.log(`Test 1.1 - check of Land Plane confirmation message : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected: ${expected}; Actual: ${actual}`);
+        console.log(`Expected: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 }
 
 export function test1_2() {
     //Compare the length of the list of planes to see if it is one larger
+    //to confirm data has been added to the list
     //Arrange
     
     let theAirport = new Airport();
@@ -58,17 +59,17 @@ export function test1_2() {
 
     //report
     if (result) {
-        console.log(`Test 1.2 - Add Plane confirmation : Pass`);        
+        console.log(`Test 1.2 - Land Plane functionality confirmation : Pass`);        
     } else {
-        console.log(`Test 1.2 - Add Plane confirmation : Fail`);
+        console.log(`Test 1.2 - Land Plane functionality confirmation : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
         console.log(`==================`);        
     } 
 }
 
 export function test1_3() {
-    //returns and error if a non plane is added
+    //Test to check correct error messaged returned if a non plane is landed
     //Arrange
     
     let theAirport = new Airport();
@@ -84,17 +85,17 @@ export function test1_3() {
 
     //report
     if (result) {
-        console.log(`Test 1.3 - erroneous data check : Pass`);        
+        console.log(`Test 1.3 - land function erroneous data check : Pass`);        
     } else {
-        console.log(`Test 1.3 - erroneous data check : Fail`);
+        console.log(`Test 1.3 - land function erroneous data check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 }
 
 export function test1_4() {
-    //returns and error if a null is added
+    //test to confirm correct error messaged returned if a null is added
     //Arrange
     
     let theAirport = new Airport();
@@ -110,17 +111,17 @@ export function test1_4() {
 
     //report
     if (result) {
-        console.log(`Test 1.4 - erroneous data - null check : Pass`);        
+        console.log(`Test 1.4 - land function erroneous data - null check : Pass`);        
     } else {
-        console.log(`Test 1.4 - erroneous data - null check : Fail`);
+        console.log(`Test 1.4 - land function erroneous data - null check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 }
 
 export function test2_1() {
-    //passes out a list of the planes which are presently landed
+    //correctly passes out a list of the planes which are presently landed
     //Arrange
 
     let theAirport = new Airport();
@@ -140,11 +141,11 @@ export function test2_1() {
 
     //report
     if (result) {
-        console.log(`Test 2.1 - List Export : Pass`);        
+        console.log(`Test 2.1 - Landed Plane List Export function check : Pass`);        
     } else {
-        console.log(`Test 2.1 - List Export : Fail`);
+        console.log(`Test 2.1 - Landed Plane List Export function check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         displayList(planeList);
         console.log(`==================`);        
     } 
@@ -152,7 +153,7 @@ export function test2_1() {
 }
 
 export function test3_1() {
-    // Ensure a plane already in the landed list, cannot be landed.
+    // Test to ensure a plane already in the landed list, cannot be landed.
     //Arrange
     let theAirport = new Airport();
     theAirport.land(allPlanes.testPlane1);
@@ -168,18 +169,18 @@ export function test3_1() {
 
     //report
     if (result) {
-        console.log(`Test 3.1 - plane already landed check : Pass`);        
+        console.log(`Test 3.1 - plane already landed cannot land check : Pass`);        
     } else {
-        console.log(`Test 3.1 - plane already landed check : Fail`);
+        console.log(`Test 3.1 - plane already landed cannot land check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
 }
 
 export function test4_1() {
-    // test confirmation that a plane has been removed from the list.
+    // test of confirmation that a plane has been removed from the list.
     //Arrange
     let theAirport = new Airport();
     theAirport.land(allPlanes.testPlane1);
@@ -195,11 +196,11 @@ export function test4_1() {
 
     //report
     if (result) {
-        console.log(`Test 4.1 - plane took off check : Pass`);        
+        console.log(`Test 4.1 - test of the plane took off confirmation : Pass`);        
     } else {
-        console.log(`Test 4.1 - plane took off check : : Fail`);
+        console.log(`Test 4.1 - test of the plane took off confirmation : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
@@ -207,6 +208,7 @@ export function test4_1() {
 
 export function test4_2() {
     //Compare the length of the list of planes to see if it is one smaller
+    //confirming that the land takeOff function worked.
     //Arrange
     
     let theAirport = new Airport();
@@ -229,11 +231,11 @@ export function test4_2() {
 
     //automatic check
     if (result) {
-        console.log(`Test 4.2 - remove Plane confirmation : Pass`);        
+        console.log(`Test 4.2 - Test to confirm that a plane has been removed : Pass`);        
     } else {
-        console.log(`Test 4.2 - remove Plane confirmation : Fail`);
+        console.log(`Test 4.2 - Test to confirm that a plane has been removed : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
         console.log("Planes in list:");
         displayList(theAirport.listPlanes())
         console.log(`==================`);        
@@ -253,7 +255,7 @@ export function test4_2b() {
     theAirport.land(allPlanes.testPlane5);
     
     let expected = theAirport.getCount() - 1;
-    let testPlane = allPlanes.testPlane5;
+    let testPlane = allPlanes.testPlane3;
 
     //prelist for manual check - TIL JS uses pass by reference
     //let prelist = theAirport.listPlanes(); 
@@ -280,7 +282,7 @@ export function test4_2b() {
     } else {
         console.log(`Test 4.2b - remove Plane larger list confirmation : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log(`Expected plane count: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
         console.log("Planes in list:");
         displayList(theAirport.listPlanes())
         console.log(`==================`);        
@@ -318,11 +320,11 @@ export function test4_3() {
 
     //automatic check
     if (result) {
-        console.log(`Test 4.3 - remove plane null error handling check : Pass`);        
+        console.log(`Test 4.3 - takeOff null error handling check : Pass`);        
     } else {
-        console.log(`Test 4.3 - remove plane null error handling check : Fail`);
+        console.log(`Test 4.3 - takeOff null error handling check : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
+        console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
         console.log("Planes in list:");
         displayList(theAirport.listPlanes())
         console.log(`==================`);        
@@ -330,7 +332,7 @@ export function test4_3() {
 }
 
 export function test4_4() {
-    //Comfirm if passing a erroneous data is handled correctly 
+    //Comfirm if passing erroneous data is handled correctly 
     //Arrange
     
     let theAirport = new Airport();
@@ -361,11 +363,11 @@ export function test4_4() {
 
     //automatic check
     if (result) {
-        console.log(`Test 4.4 - remove plane invalid data handling check : Pass`);        
+        console.log(`Test 4.4 - takeOff invalid data handling check : Pass`);        
     } else {
-        console.log(`Test 4.4 - remove plane invalid data handling check : Fail`);
+        console.log(`Test 4.4 - takeOff invalid data handling check : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
+        console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
         console.log("Planes in list:");
         displayList(theAirport.listPlanes())
         console.log(`==================`);        
@@ -373,7 +375,8 @@ export function test4_4() {
 }
 
 export function test5_1() {
-    //Comfirm if passing a erroneous data is handled correctly 
+    //Comfirmation test that attempting to take off a plane which isn't landed returns the
+    //correct error message
     //Arrange
     
     let theAirport = new Airport();
@@ -408,11 +411,11 @@ export function test5_1() {
     
     //automatic check
     if (result) {
-        console.log(`Test 5.1 - remove non landed plane handling check : Pass`);        
+        console.log(`Test 5.1 - takeOff on a non landed plane handling check : Pass`);        
     } else {
-        console.log(`Test 5.1 - remove non landed plane handling check : Fail`);
+        console.log(`Test 5.1 - takeOff on a non landed plane handling check : Fail`);
         console.log(`==================`);
-        !result && console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
+        console.log(`Expected plane count: ${expected}; Actual: ${actual};`);
         console.log("Planes in list:");
         displayList(theAirport.listPlanes())
         console.log(`==================`);        
@@ -433,11 +436,11 @@ export function test6_1() {
 
     //report
     if (result) {
-        console.log(`Test 6.1 - airport usage check : Pass`);
+        console.log(`Test 6.1 - airport able to return how many planes are landed check : Pass`);
     } else {
-        console.log(`Test 6.1 - airport usage check : : Fail`);
+        console.log(`Test 6.1 - airport able to return how many planes are landed check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);
     }
 }
@@ -456,17 +459,17 @@ export function test6_2() {
 
     //report
     if (result) {
-        console.log(`Test 6.2 - airport max cap check : Pass`);
+        console.log(`Test 6.2 - airport able to return the max cap check : Pass`);
     } else {
-        console.log(`Test 6.2 - airport max cap check : Fail`);
+        console.log(`Test 6.2 - airport able to return the max cap check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);
     }
 }
 
 export function test7_1() {
-    // Check if the you are able to adjust maxCap
+    // Check if the confirmation to adjusting maxCap is correct
     //Arrange
     let theAirport = new Airport();
     let expected = "cap changed";
@@ -484,13 +487,13 @@ export function test7_1() {
     } else {
         console.log(`Test 7.1 - airport Max Cap adjustment response check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);
     }
 }
 
 export function test7_2() {
-    // Confirm maxCap adjustment has been made
+    //Confirm maxCap adjustment has actually been made
     //Arrange
     let theAirport = new Airport();
     let expected = 5;
@@ -509,7 +512,7 @@ export function test7_2() {
     } else {
         console.log(`Test 7.2 - airport Max Cap adjustment confirmation check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}; Error Code: ${errorCode}`);
         console.log(`==================`);
     }
 }
@@ -534,7 +537,7 @@ export function test7_3() {
     } else {
         console.log(`Test 7.3 - airport Max Cap adjustment erroneous data check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual};`);
+        console.log(`export function response: ${expected}; Actual: ${actual};`);
         console.log(`==================`);
     }
 }
@@ -558,7 +561,7 @@ export function test7_4() {
     } else {
         console.log(`Test 7.4 - airport Max Cap adjustment null data check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual};`);
+        console.log(`export function response: ${expected}; Actual: ${actual};`);
         console.log(`==================`);
     }
 }
@@ -583,7 +586,7 @@ export function test7_5() {
     } else {
         console.log(`Test 7.5 - airport Max Cap adjustment negative data check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual};`);
+        console.log(`export function response: ${expected}; Actual: ${actual};`);
         console.log(`==================`);
     }
 }
@@ -611,7 +614,7 @@ export function test8_1() {
     } else {
         console.log(`Test 8.1 - attempt to exceed max capacity check handling : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
@@ -639,7 +642,7 @@ export function test8_2() {
     } else {
         console.log(`Test 8.2 - attempt to land plane 1 below max capacity check handling : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
@@ -672,8 +675,8 @@ export function test8_3() {
     } else {
         console.log(`Test 8.3 - a plane unable to land will be able to if the cap is raised check : Fail`);
         console.log(`==================`);
-        !result && console.log(`Preadjustment check failure: export function response: ${expected}; Actual: ${actual}`);
-        !result && console.log(`Postadjustment check failure: export function response: ${expected}; Actual: ${actual}`);
+        console.log(`Preadjustment check failure: export function response: ${expected}; Actual: ${actual}`);
+        console.log(`Postadjustment check failure: export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
@@ -695,18 +698,18 @@ export function test9_1() {
 
     //report
     if (result) {
-        console.log(`Test 9.1 - can the airport report the weather? : Pass`);        
+        console.log(`Test 9.1 - confirmation the airport can report the weather : Pass`);        
     } else {
-        console.log(`Test 9.1 - can the airport report the weather? : Fail`);
+        console.log(`Test 9.1 - confirmation the airport can report the weather : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
 }
 
 export function test9_2() {
-    // Check if the weather can be changed and is able to return the confirmation
+    // Test if the setWeather confirmation message is returned
 
     //Arrange
     let theAirport = new Airport();
@@ -721,11 +724,11 @@ export function test9_2() {
 
     //report
     if (result) {
-        console.log(`Test 9.2 - can the weather be set? : Pass`);        
+        console.log(`Test 9.2 - setWeather confirmation message check : Pass`);        
     } else {
-        console.log(`Test 9.2 - can the weather be set? : Fail`);
+        console.log(`Test 9.2 - setWeather confirmation message check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
@@ -751,14 +754,14 @@ export function test9_3() {
     } else {
         console.log(`Test 9.3 - can the weather be changed correctly? : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}; ErrorCode: ${errorCode}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}; ErrorCode: ${errorCode}`);
         console.log(`==================`);        
     } 
 
 }
 
 export function test9_4() {
-    // Check set weather can handle null values correctly
+    // Check setWeather can handle null values correctly
     //Arrange
     let theAirport = new Airport();
     let expected = "invalid weather";
@@ -773,11 +776,11 @@ export function test9_4() {
 
     //report
     if (result) {
-        console.log(`Test 9.4 - erroneous data: null check : Pass`);        
+        console.log(`Test 9.4 - setWeather erroneous data: null check : Pass`);        
     } else {
-        console.log(`Test 9.4 - erroneous data: null check : Fail`);
+        console.log(`Test 9.4 - setWeather erroneous data: null check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}; `);
+        console.log(`export function response: ${expected}; Actual: ${actual}; `);
         console.log(`==================`);        
     } 
 
@@ -799,11 +802,11 @@ export function test9_5() {
 
     //report
     if (result) {
-        console.log(`Test 9.5 - erroneous data: empty string check : Pass`);        
+        console.log(`Test 9.5 - setWeather erroneous data: empty string check : Pass`);        
     } else {
-        console.log(`Test 9.5 - erroneous data: empty string check : Fail`);
+        console.log(`Test 9.5 - setWeather erroneous data: empty string check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}; `);
+        console.log(`export function response: ${expected}; Actual: ${actual}; `);
         console.log(`==================`);        
     } 
 
@@ -811,7 +814,7 @@ export function test9_5() {
 
 
 export function test10_1() {
-    // Unable to land planes if the weather is stormy
+    // test to ensure Unable to land planes if the weather is stormy
     //Arrange
     let theAirport = new Airport();
     let expected = "stormy weather warning";
@@ -819,19 +822,17 @@ export function test10_1() {
     theAirport.setWeather("Stormy");
 
 
-    //Act
-
-    
+    //Act    
     let actual = theAirport.land(testPlane);
 
-   // Assert
+    //Assert
     let result = assertEquals(actual, expected);
 
     //report
     if (result) {
-        console.log(`Test 10.1 - stormy weather stops a plane from landing : Pass`);        
+        console.log(`Test 10.1 - stormy weather stops a plane from landing check : Pass`);        
     } else {
-        console.log(`Test 10.1 - stormy weather stops a plane from landing : Fail`);
+        console.log(`Test 10.1 - stormy weather stops a plane from landing check : Fail`);
         console.log(`==================`);
         console.log(`export function response: ${expected}; Actual: ${actual}; `);
         console.log(`Weather: ${theAirport.getWeather()}; Stormy: ${theAirport.getStormy()}`);
@@ -944,6 +945,7 @@ export function test11_2() {
 
 }
 
+/*
 export function template() {
     // Purpose of test
     //Arrange
@@ -960,10 +962,10 @@ export function template() {
     } else {
         console.log(`Test 1.4 - erroneous data - negatives check : Fail`);
         console.log(`==================`);
-        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`export function response: ${expected}; Actual: ${actual}`);
         console.log(`==================`);        
     } 
 
 }
-
+*/
 

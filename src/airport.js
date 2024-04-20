@@ -9,28 +9,16 @@ export class Airport{
             
     }
     
-    land(newplane) {
+    land(newPlane) {
 
-        if (!(newplane instanceof Plane)) { return "invalid plane"; }
+        if (!(newPlane instanceof Plane)) { return "invalid plane"; }
         if (this.stormy == true) { return "stormy weather warning"; }
-        if (this.landedAircraft.indexOf(newplane) !== -1) { return "plane already landed"; }
+        if (this.landedAircraft.indexOf(newPlane) !== -1) { return "plane already landed"; }
         if (this.getCount() >= this.maxCap) { return "max capacity reached"; } 
 
-        this.landedAircraft.push(newplane);
+        this.landedAircraft.push(newPlane);
         return "plane added"; 
 
-
-        /*
-        is this too many nested if statments? i decided it was
-        if (newplane instanceof Plane) {
-            if (this.landedAircraft.indexOf(newplane) === -1) {
-                if (this.getCount() < this.maxCap) {
-                    this.landedAircraft.push(newplane);
-                    return "plane added";                                
-                } else { return "max capacity reached"; }                
-            } else { return "plane already landed"; }            
-        } else { return "invalid plane"; }        
-        */
     }
 
     takeOff(planeToGo) {
@@ -40,18 +28,7 @@ export class Airport{
         if (index === -1) { return "plane not landed"; }
 
         this.landedAircraft.splice(index, 1);
-        return "plane took-off";  
-
-        /*if (planeToGo instanceof Plane) {
-            let i = this.landedAircraft.indexOf(planeToGo);
-            if (i != -1) {
-                let index = this.landedAircraft.indexOf(planeToGo);
-                this.landedAircraft.splice(index, 1);
-                return "plane took-off";                
-            } else{return "plane not landed"}
-            
-        } else { return "invalid plane"; } */
-        
+        return "plane took-off";    
     }
 
     listPlanes() { return this.landedAircraft; }
@@ -76,6 +53,8 @@ export class Airport{
         if (weather == null || weather == "") { return "invalid weather"; }
         this.weather = weather;
         this.stormy = (weather === "Stormy");
+        //stormy variable created in case there are different severities of weather
+        //that need to be tracked more accurately than just stormy and not stormy
         return "weather set";
     }
 
