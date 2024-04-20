@@ -34,7 +34,8 @@ export class Airport{
     }
 
     takeOff(planeToGo) {
-        if (!(planeToGo instanceof Plane)) { return "invalid plane"; }        
+        if (!(planeToGo instanceof Plane)) { return "invalid plane"; } 
+        if (this.stormy == true) { return "stormy weather warning"; }
         let index = this.landedAircraft.indexOf(planeToGo);
         if (index === -1) { return "plane not landed"; }
 

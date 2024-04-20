@@ -164,5 +164,5 @@ so that I know what planes are at the airport
 
 <br><b><i>Tests:</i></b>
 
-- [ ] if the weather is stormy the takeOff function returns appropriate error message
+- [x] if the weather is stormy the takeOff function returns appropriate error message
 - [ ] if the weather is not stormy and no other exception is met, the plane can take-off
