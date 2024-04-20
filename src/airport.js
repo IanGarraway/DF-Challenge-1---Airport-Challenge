@@ -68,6 +68,10 @@ export class Airport{
         return "Sunny";
     }
 
+    setWeather() {
+        return "weather set";
+    }
+
     
 
 

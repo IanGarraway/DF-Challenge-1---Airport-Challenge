@@ -705,6 +705,32 @@ export function test9_1() {
 
 }
 
+export function test9_2() {
+    // Check if the weather can be changed and is able to return the confirmation
+
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "weather set";
+
+    //Act
+
+    let actual = theAirport.setWeather("Stormy");
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 9.2 - can the weather be set? : Pass`);        
+    } else {
+        console.log(`Test  9.2 - can the weather be set? : Fail`);
+        console.log(`==================`);
+        !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
+
 
 export function template() {
     // Purpose of test
