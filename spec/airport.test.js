@@ -723,9 +723,87 @@ export function test9_2() {
     if (result) {
         console.log(`Test 9.2 - can the weather be set? : Pass`);        
     } else {
-        console.log(`Test  9.2 - can the weather be set? : Fail`);
+        console.log(`Test 9.2 - can the weather be set? : Fail`);
         console.log(`==================`);
         !result && console.log(`export function response: ${expected}; Actual: ${actual}`);
+        console.log(`==================`);        
+    } 
+
+}
+
+export function test9_3() {
+    // Check if the weather can be changed and is able to return the changed weather
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "Stormy";
+
+    //Act
+
+    let errorCode = theAirport.setWeather("Stormy");
+    let actual = theAirport.getWeather();
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 9.3 - can the weather be changed correctly? : Pass`);        
+    } else {
+        console.log(`Test 9.3 - can the weather be changed correctly? : Fail`);
+        console.log(`==================`);
+        !result && console.log(`export function response: ${expected}; Actual: ${actual}; ErrorCode: ${errorCode}`);
+        console.log(`==================`);        
+    } 
+
+}
+
+export function test9_4() {
+    // Check set weather can handle null values correctly
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "invalid weather";
+
+    //Act
+
+    let actual = theAirport.setWeather();
+    
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 9.4 - erroneous data: null check : Pass`);        
+    } else {
+        console.log(`Test 9.4 - erroneous data: null check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`export function response: ${expected}; Actual: ${actual}; `);
+        console.log(`==================`);        
+    } 
+
+}
+
+export function test9_5() {
+    // Check set weather can handle empty strings correctly
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "invalid weather";
+
+    //Act
+
+    let actual = theAirport.setWeather("");
+    
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 9.5 - erroneous data: empty string check : Pass`);        
+    } else {
+        console.log(`Test 9.5 - erroneous data: empty string check : Fail`);
+        console.log(`==================`);
+        !result && console.log(`export function response: ${expected}; Actual: ${actual}; `);
         console.log(`==================`);        
     } 
 

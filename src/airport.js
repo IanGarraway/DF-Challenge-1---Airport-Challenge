@@ -4,6 +4,7 @@ export class Airport{
     constructor() {
         this.landedAircraft = [];
         this.maxCap = 10;
+        this.weather = "Sunny";
             
     }
     
@@ -65,10 +66,12 @@ export class Airport{
     }
 
     getWeather() {
-        return "Sunny";
+        return this.weather;
     }
 
-    setWeather() {
+    setWeather(weather) {
+        if (weather == null || weather == "") { return "invalid weather"; }
+        this.weather = weather;
         return "weather set";
     }
 

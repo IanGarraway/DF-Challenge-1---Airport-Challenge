@@ -133,8 +133,11 @@ so that I know what planes are at the airport
 
 <br><b><i>Tests:</i></b>
 
-- [ ] returns the value of weather
-- [ ] allows user to set weather and change the value and report back the correct weather
+- [x] returns the value of weather
+- [x] allows user to set weather a
+- [x] confirm changing the value will report back the correct weather
+- [ ] confirm passing in a null value to setWeather is handled correctly
+- [ ] confirm passing in an empty string to setWeather is handled correctly
 
 ### <b><i>User Story 10</i></b>
 <br>As an air traffic controller, I want the system to prohibit planes from landing during stormy weather conditions, so that potential damage to aircraft and infrastructure is avoided.
