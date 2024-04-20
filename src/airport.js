@@ -6,8 +6,19 @@ export class Airport{
         this.maxCap = 10;
             
     }
-    //is this too many nested if statments?
+    
     land(newplane) {
+
+        if (!(newplane instanceof Plane)) { return "invalid plane"; }
+        if (this.landedAircraft.indexOf(newplane) !== -1) { return "plane already landed"; }
+        if (this.getCount() >= this.maxCap) { return "max capacity reached"; } 
+
+        this.landedAircraft.push(newplane);
+        return "plane added"; 
+
+
+        /*
+        is this too many nested if statments? i decided it was
         if (newplane instanceof Plane) {
             if (this.landedAircraft.indexOf(newplane) === -1) {
                 if (this.getCount() < this.maxCap) {
@@ -16,6 +27,7 @@ export class Airport{
                 } else { return "max capacity reached"; }                
             } else { return "plane already landed"; }            
         } else { return "invalid plane"; }        
+        */
     }
 
     remPlane(planeToGo) {
