@@ -151,7 +151,7 @@ so that I know what planes are at the airport
 <br><b><i>Tests:</i></b>
 
 - [x] if the weather is stormy the land function returns appropriate error message
-- [ ] if the weather is not stormy and no other exception is met, the plane can land
+- [x] if the weather is no longer stormy and no other exception is met, the plane can land
 
 ### <b><i>User Story 11</i></b>
 <br>As an air traffic controller, I want the system to prevent planes from taking off during stormy weather, so that safety is maintained and risks of accidents are minimized.

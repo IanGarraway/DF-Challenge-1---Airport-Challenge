@@ -841,6 +841,42 @@ export function test10_1() {
 
 }
 
+export function test10_2() {
+    // Able to land planes if the weather is has been changed from stormy
+    //Arrange
+    let theAirport = new Airport();
+    let expected = "plane added";
+    let testPlane = allPlanes.testPlane1;
+    theAirport.setWeather("Stormy");
+
+    let stormyLanding = theAirport.land(testPlane);
+
+    theAirport.setWeather("Sunny");
+
+
+    //Act
+
+    
+    let actual = theAirport.land(testPlane);
+
+   // Assert
+    let result = assertEquals(actual, expected);
+
+    //report
+    if (result) {
+        console.log(`Test 10.2 - changing back from stormy allows a plane to land : Pass`);        
+    } else {
+        console.log(`Test 10.2 - changing back from stormy allows a plane to land : Fail`);
+        console.log(`==================`);
+        console.log(`export function response: ${expected}; Actual: ${actual}; `);
+        console.log(`Weather: ${theAirport.getWeather()}; Stormy: ${theAirport.getStormy()}`);
+        console.log(`stormy Landing attempt: ${stormyLanding}`);
+
+        console.log(`==================`);        
+    } 
+
+}
+
 export function template() {
     // Purpose of test
     //Arrange
