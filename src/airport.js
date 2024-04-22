@@ -60,9 +60,4 @@ export class Airport{
 
     getStormy() { return this.stormy; }
 
-    
-
-
-
-
 }
